@@ -29,11 +29,18 @@ document.addEventListener("DOMContentLoaded", () => {
         .map(item => item.trim())
         .filter(item => item.length > 0);
   
-      if (items.length === 0) return;
-  
+      if (items.length === 0) {
+        chrome.storage.local.set({ blockList: items }, () => {
+          renderBlockList(items);
+          // blockInput.value = "";
+        });
+        return;
+      }
       chrome.storage.local.get(["blockList"], (data) => {
         // const updatedList = [...(data.blockList || []), ...items];
-        const updatedList = [...new Set([...(data.blockList || []), ...items])];
+        //const updatedList = [...new Set([...(data.blockList || []), ...items])];
+        const updatedList = data.blockList = [ ...items];
+        //const updatedList = [...new Set([...(data.blockList || []), ...items])];
         chrome.storage.local.set({ blockList: updatedList }, () => {
           renderBlockList(updatedList);
           // blockInput.value = "";
