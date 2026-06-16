@@ -32,10 +32,11 @@ document.addEventListener("DOMContentLoaded", () => {
       if (items.length === 0) return;
   
       chrome.storage.local.get(["blockList"], (data) => {
-        const updatedList = [...(data.blockList || []), ...items];
+        // const updatedList = [...(data.blockList || []), ...items];
+        const updatedList = [...new Set([...(data.blockList || []), ...items])];
         chrome.storage.local.set({ blockList: updatedList }, () => {
           renderBlockList(updatedList);
-          blockInput.value = "";
+          // blockInput.value = "";
         });
       });
     });
@@ -43,7 +44,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // Render blocklist
     function renderBlockList(items) {
       blockList.innerHTML = items.length ? "" : "<li>No blocked items</li>";
-      
+      const resultString = items.join('\n');
+      blockInput.value =resultString;
+      return;
       items.forEach((item, index) => {
         const li = document.createElement("li");
         li.innerHTML = `
