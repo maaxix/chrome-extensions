@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>URL Blocker</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1>URL & Popup Blocker</h1>
+    
+    <div class="toggle-group">
+      <label>
+        <input type="checkbox" id="toggleEnabled" checked>
+        <span>Enable Blocker</span>
+      </label>
+    </div>
+
+    <div class="toggle-group">
+      <label>
+        <input type="checkbox" id="togglePopupBlocking" checked>
+        <span>Block Popups</span>
+      </label>
+    </div>
+
+    <div class="input-area">
+      <textarea id="blockInput" placeholder="Enter URLs/keywords to block (one per line)"></textarea>
+      <button id="addButton">Add to Blocklist</button>
+    </div>
+
+    <div class="blocklist">
+      <h3>Blocked Items:</h3>
+      <ul id="blockList"></ul>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

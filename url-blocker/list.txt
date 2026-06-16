@@ -1,0 +1,17 @@
+.google-analytics.com/
+.googletagservices.com/
+chartbeat.com
+safebrowsing.clients.google.com
+.googleadservices.com/
+pagead2.
+simgad
+adsystem.
+adnxs.
+bidsystem.
+ads.
+doubleclick.
+.hit.
+imrworldwide.
+www.facebook.com/plugins/
+fbcdn-creative-a.akamaihd.net
+.amazonaws.com/uploads/

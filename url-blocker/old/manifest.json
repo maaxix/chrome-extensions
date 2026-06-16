@@ -1,0 +1,34 @@
+{
+    "manifest_version": 3,
+    "name": "URL Blocker",
+    "version": "1.0",
+    "description": "Blocks URLs containing specified substrings",
+    "permissions": [
+      "declarativeNetRequest",
+      "declarativeNetRequestWithHostAccess",
+      "storage",
+      "activeTab",
+      "scripting"
+    ],
+    "host_permissions": [
+      "<all_urls>"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_popup": "popup/popup.html",
+      "default_icon": {
+        "16": "icons/icon0.png",
+        "32": "icons/icon0.png",
+        "48": "icons/icon0.png",
+        "128": "icons/icon0.png"
+      }
+    },
+    "icons": {
+      "16": "icons/icon1.png",
+      "32": "icons/icon1.png",
+      "48": "icons/icon1.png",
+      "128": "icons/icon1.png"
+    }
+  }
