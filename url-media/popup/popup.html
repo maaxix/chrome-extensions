@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Media URL Capturer</title>
+<link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div class="brand">
+        <span class="brand-dot"></span>
+        <h1>Media URL Capturer</h1>
+      </div>
+    </header>
+
+    <section class="card">
+      <div class="row">
+        <div class="row-text">
+          <strong>Capturing</strong>
+          <span class="hint">Global on/off switch</span>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="globalToggle" />
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <div class="row" id="tabRow">
+        <div class="row-text">
+          <strong>This tab</strong>
+          <span class="hint" id="tabTitleHint">—</span>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="tabToggle" />
+          <span class="slider"></span>
+        </label>
+      </div>
+    </section>
+
+    <section class="card stat-card">
+      <div class="stat">
+        <span class="stat-value" id="tabCount">0</span>
+        <span class="stat-label">captured on this tab</span>
+      </div>
+      <button class="btn btn-primary" id="openPanelBtn">Open side panel</button>
+    </section>
+
+    <section class="card">
+      <div class="row">
+        <div class="row-text">
+          <strong>Capture .ts / segment requests</strong>
+          <span class="hint">Off by default — very noisy (many requests per stream)</span>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="segmentsToggle" />
+          <span class="slider"></span>
+        </label>
+      </div>
+    </section>
+
+    <section class="actions">
+      <button class="btn" id="exportBtn">Export .txt</button>
+      <button class="btn btn-danger" id="clearBtn">Clear this tab</button>
+    </section>
+
+    <footer class="footer">
+      <span id="statusMsg"></span>
+      <span class="footer-note">Data clears when the browser exits</span>
+    </footer>
+  </div>
+
+  <script src="popup.js" type="module"></script>
+</body>
+</html>

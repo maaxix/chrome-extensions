@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Media URL Capturer</title>
+<link rel="stylesheet" href="sidepanel.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-dot"></span>
+        <h1>Media URL Capturer</h1>
+      </div>
+      <div class="topbar-toggles">
+        <label class="mini-switch" title="Global capture on/off">
+          <input type="checkbox" id="globalToggle" />
+          <span class="mslider"></span>
+          <span class="mlabel">Capture</span>
+        </label>
+        <label class="mini-switch" title="Capture .ts / .m4s segment requests">
+          <input type="checkbox" id="segmentsToggle" />
+          <span class="mslider"></span>
+          <span class="mlabel">Segments</span>
+        </label>
+      </div>
+    </header>
+
+    <section class="toolbar">
+      <div class="scope-select">
+        <select id="scopeSelect"></select>
+      </div>
+      <input type="search" id="searchInput" placeholder="Filter by URL…" />
+      <div class="type-filters" id="typeFilters"></div>
+    </section>
+
+    <section class="tabs-strip" id="tabsStrip"></section>
+
+    <main class="list-wrap">
+      <table class="list" id="list">
+        <thead>
+          <tr>
+            <th class="col-type">Type</th>
+            <th class="col-url">URL</th>
+            <th class="col-time">Time</th>
+            <th class="col-actions"></th>
+          </tr>
+        </thead>
+        <tbody id="listBody"></tbody>
+      </table>
+      <div class="empty-state" id="emptyState">
+        <p>No media URLs captured yet.</p>
+        <p class="empty-hint">Play a video or browse a streaming page — HLS, DASH, and MP4 URLs will show up here.</p>
+      </div>
+    </main>
+
+    <footer class="bottombar">
+      <span id="countLabel">0 items</span>
+      <div class="bottombar-actions">
+        <button class="btn" id="exportBtn">Export .txt</button>
+        <button class="btn btn-danger" id="clearBtn">Clear</button>
+      </div>
+    </footer>
+  </div>
+
+  <script src="sidepanel.js" type="module"></script>
+</body>
+</html>
