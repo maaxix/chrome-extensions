@@ -29,6 +29,7 @@ export const MEDIA_TYPES = {
   AUDIO: 'audio',
   VIDEO: 'video',
   BLOB: 'blob',
+  VTT: 'vtt',
   OTHER: 'other'
 };
 
@@ -42,6 +43,7 @@ export const MEDIA_TYPE_LABELS = {
   [MEDIA_TYPES.AUDIO]: 'Audio',
   [MEDIA_TYPES.VIDEO]: 'Video',
   [MEDIA_TYPES.BLOB]: 'Blob URL (in-page)',
+  [MEDIA_TYPES.VTT]: 'subtitle',
   [MEDIA_TYPES.OTHER]: 'Other Media'
 };
 

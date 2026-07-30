@@ -36,9 +36,13 @@ export function classifyMedia(url, contentType = '') {
   const ext = getExtension(pathname);
   const ct = (contentType || '').toLowerCase();
 
+  // console.log(ct);
   // --- Playlists / manifests -------------------------------------------
   if (ext === 'm3u8' || ct.includes('mpegurl')) {
     return { type: MEDIA_TYPES.HLS, isSegment: false };
+  }
+  if ( ct.includes('text/vtt')) {
+    return { type: MEDIA_TYPES.VTT, isSegment: false };
   }
   if (ext === 'mpd' || ct.includes('dash+xml')) {
     return { type: MEDIA_TYPES.DASH, isSegment: false };
